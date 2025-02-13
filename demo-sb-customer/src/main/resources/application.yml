@@ -1,0 +1,15 @@
+# server.port
+server:
+  port: 8100
+
+# spring.datasource.driverClassName
+# spring.datasource.url
+spring.datasource:
+  driverClassName: "com.mysql.cj.jdbc.Driver"
+  url: "jdbc:mysql://localhost:3306/bootcamp_2412"
+  username: "root"
+  password: "admin1234"
+  
+spring.jpa:
+  show-sql: true
+  hibernate.ddl-auto: update

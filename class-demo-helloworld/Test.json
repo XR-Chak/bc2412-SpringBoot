@@ -1,0 +1,39 @@
+{
+  "name" : {
+    "firstName":"Vincent",
+    "lastName":"Lau",
+    "nickName":null
+  },
+  "age" : 14,
+  "addresses" : [
+    {
+      "line1":"ABC",
+      "line2":"ABC",
+      "line3":"ABC"
+    },
+    {
+      "line1":"ABC",
+      "line2":"ABC",
+      "line3":"ABC"
+    }
+  ]
+}
+
+public class Person{
+  private Name name;
+  private int age;
+  private Address[] addresses;
+
+  public static class Name{
+    private String firstName;
+    private String lastName;
+    private String nickName;
+  }
+
+
+  public static class Address{
+    private String line1;
+    private String line2;
+    private String line3;
+  }
+}
