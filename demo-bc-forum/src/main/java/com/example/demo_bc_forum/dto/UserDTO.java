@@ -1,15 +1,18 @@
-package com.example.demo_sb_customer.model;
+package com.example.demo_bc_forum.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-
-
-//Dta transfer object
-//this dto is for deserialization(json->object)
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import java.util.List;
+import com.example.demo_bc_forum.model.*;
 @Getter
-@Builder
-public class User {
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserDTO {
   private Long id;
   private String name;
   private String username;
@@ -18,10 +21,12 @@ public class User {
   private String phone;
   private String website;
   private Company company;
+  private List<PostDTOO> posts;
   
 
   @Getter
   @Builder
+  @Setter
   public static class Address {
     private String street;
     private String suite;
@@ -29,8 +34,11 @@ public class User {
     private String zipcode;
     private Geo geo;
 
+   
+
     @Getter
     @Builder
+    @Setter
     public static class Geo {
       @JsonProperty(value = "lat")
       private String latitude;
@@ -42,6 +50,7 @@ public class User {
 
   @Getter
   @Builder
+  @Setter
   public static class Company {
     private String name;
     private String catchPhrase;

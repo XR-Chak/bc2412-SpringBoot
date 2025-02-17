@@ -11,6 +11,9 @@ public class ApiResp<T> {
     return new Builder<>();
   }
 
+  public ApiResp() {
+    
+  }
   public ApiResp(Builder<T> builder) {
     this.code = builder.code;
     this.message = builder.message;

@@ -1,15 +1,16 @@
-package com.example.demo_sb_customer.model;
+package com.example.demo_bc_forum.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-
-//Dta transfer object
-//this dto is for deserialization(json->object)
 @Getter
-@Builder
-public class User {
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserDto {
   private Long id;
   private String name;
   private String username;
@@ -18,10 +19,9 @@ public class User {
   private String phone;
   private String website;
   private Company company;
-  
+
 
   @Getter
-  @Builder
   public static class Address {
     private String street;
     private String suite;
@@ -30,7 +30,6 @@ public class User {
     private Geo geo;
 
     @Getter
-    @Builder
     public static class Geo {
       @JsonProperty(value = "lat")
       private String latitude;
@@ -41,7 +40,6 @@ public class User {
   }
 
   @Getter
-  @Builder
   public static class Company {
     private String name;
     private String catchPhrase;
