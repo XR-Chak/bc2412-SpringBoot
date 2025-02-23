@@ -2,14 +2,18 @@ package com.example.demo_bc_forum.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@ToString
 public class UserDto {
   private Long id;
   private String name;
@@ -22,6 +26,8 @@ public class UserDto {
 
 
   @Getter
+  @Builder
+  @ToString
   public static class Address {
     private String street;
     private String suite;
@@ -30,16 +36,20 @@ public class UserDto {
     private Geo geo;
 
     @Getter
+    @Builder
+    @ToString
     public static class Geo {
       @JsonProperty(value = "lat")
       private String latitude;
       @JsonProperty(value = "lng")
       private String longitude;
-      
+
     }
   }
 
   @Getter
+  @Builder
+  @ToString
   public static class Company {
     private String name;
     private String catchPhrase;

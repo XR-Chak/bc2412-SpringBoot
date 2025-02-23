@@ -1,8 +1,13 @@
 package com.example.demo_sb_customer.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.example.demo_sb_customer.entity.CustomerEntity;
+import java.util.List;
+import java.util.Optional;
+
 
 @Repository // bean
 public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> {
@@ -13,4 +18,17 @@ public interface CustomerRepository extends JpaRepository<CustomerEntity, Long> 
   // findById()
   // deleteById()
   
+  //select * from customers where name ='John';
+  //controller -> service ->
+  Optional<CustomerEntity>findByName(String name);
+
+  //JPA Method
+
+  // ! JPQL
+  @Query(value = "select c from customerEntity c where c.name =:name",nativeQuery =false)
+  List<CustomerEntity> findByNameByJPQL(@Param("name") String customerName);
+
+  // Native Query ,map 
+  @Query(value = "select c.* from customers c where c.name = :name",nativeQuery = true)
+  List<CustomerEntity> findByNameByNativeQuery(@Param("name") String customerName);
 }

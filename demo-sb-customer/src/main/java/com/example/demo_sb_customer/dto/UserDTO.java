@@ -46,6 +46,6 @@ public class UserDTO {
     }
   }
   public static void main(String[] args) {
-    User userDto2 = new User();
+    //User userDto2 = new User();
   }
 }
