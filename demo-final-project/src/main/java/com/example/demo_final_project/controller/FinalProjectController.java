@@ -21,10 +21,10 @@ public class FinalProjectController {
   CrumbManager crumbManager;
   @Autowired
   YahooFinanceManager yahooFinanceManager;
-  @GetMapping("/crumb")
-  public String getCrumb() {
-      return this.crumbManager.getCrumb();
-  }
+  // @GetMapping("/crumb")
+  // public String getCrumb() {
+  //     return this.crumbManager.getCrumb();
+  // }
   
   @GetMapping("/quote/{symbols}")
   public Quote getMethodName(@PathVariable String symbols) {

@@ -12,9 +12,16 @@ import lombok.Setter;
 @Setter
 @Builder
 public class Quote {
+    private QuoteResponse quoteResponse;
+    
+@Getter
+@Setter
+@Builder
+public static class QuoteResponse {
     private Result[] result;
     private String error;  // Using String for simplicity, could be null
-
+  
+}
 @Getter
 @Setter
 @Builder
@@ -27,7 +34,7 @@ public static class Result {// Main Result class containing all stock data
   private boolean triggerable;
   private String customPriceAlertConfidence;
   private String currency;
-  private String[] corporateActions;
+  private CorporateAction[] corporateActions;
   private long regularMarketTime;
   private String shortName;
   private String longName;

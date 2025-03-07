@@ -26,7 +26,6 @@ public class CrumbManager {
 
     ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
     CRUMBKEY = response.getBody();
-    System.out.println(CRUMBKEY);
     return response.getBody();
   }
   
