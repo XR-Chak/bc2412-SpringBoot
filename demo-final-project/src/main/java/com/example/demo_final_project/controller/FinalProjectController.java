@@ -6,6 +6,7 @@ import com.example.demo_final_project.dto.Quote;
 import com.example.demo_final_project.service.CrumbManager;
 import com.example.demo_final_project.service.FinalProjectService;
 import com.example.demo_final_project.service.YahooFinanceManager;
+import com.example.demo_final_project.service.YahooCookieManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @ResponseBody
 public class FinalProjectController {
+  @Autowired
+  YahooCookieManager yahooCookieManager;
   @Autowired
   FinalProjectService finalProjectService;
   @Autowired
@@ -30,5 +33,7 @@ public class FinalProjectController {
   public Quote getMethodName(@PathVariable String symbols) {
       return this.yahooFinanceManager.getQuote(symbols);
   }
+
+  
   
 }
